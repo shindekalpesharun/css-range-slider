@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pure CSS range slider</title>
+    <style>
+        body {
+            margin: 0;
+            background: black;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        body .sun,
+        body .sun-bg {
+            height: 100vh;
+            position: absolute;
+            clip-path: circle(200px at 50% 50%);
+            background: url(4.png);
+            background-position: center;
+            width: 100%;
+            background-size: cover;
+        }
+
+        body .sun-bg {
+            -webkit-clip-path: none;
+            z-index: -1;
+        }
+
+        body {
+            height: 100vh;
+            margin: 0;
+            display: flex;
+        }
+
+        input[type="range"] {
+            margin: auto;
+            -webkit-appearance: none;
+            position: absolute;
+            overflow: hidden;
+            outline: none;
+            height: 100vh;
+            background: transparent;
+            width: 100%;
+            cursor: pointer;
+            border-radius: 0;
+        }
+
+        ::-webkit-slider-runnable-track {
+            background: transparent;
+        }
+
+        ::-webkit-slider-thumb {
+            mix-blend-mode: hue;
+            -webkit-appearance: none;
+            width: 30px;
+            filter: blur(30px);
+            height: 30px;
+            background: white;
+            box-shadow: -100vw 0 0 100vw dodgerblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sun"></div>
+    <div class="sun-bg"></div>
+    <input type="range" name="slider" id="any">
+</body>
+
+</html>
